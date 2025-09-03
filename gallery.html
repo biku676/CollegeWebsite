@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery - Department of Computer Science</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header Section (same as other pages) -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="imp_data/logo.png" alt="College Logo">
+                <div class="logo-text">
+                    <h1>Department of Computer Science</h1>
+                    <p>Excellence in AI, ML & Coding Education</p>
+                </div>
+            </div>
+
+            <button class="mobile-menu-btn">☰</button>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="materials.html">Study Materials</a></li>
+                    <li><a href="faculty.html">Faculty</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="facilities.html">Facilities</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Photo Gallery</h2>
+                <p>Capturing moments from our department activities</p>
+            </div>
+
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="campus">Campus</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="faculty">Faculty</button>
+                <button class="filter-btn" data-filter="students">Students</button>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Gallery items will be loaded here -->
+                <!-- Placeholder items -->
+                <div class="gallery-item" data-category="campus">
+                    <img src="https://via.placeholder.com/400x300?text=Campus+Photo" alt="Campus">
+                    <div class="gallery-caption">
+                        <h3>Computer Science Building</h3>
+                        <p>Our state-of-the-art department building</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events">
+                    <img src="https://via.placeholder.com/400x300?text=Event+Photo" alt="Event">
+                    <div class="gallery-caption">
+                        <h3>AI Workshop 2023</h3>
+                        <p>Students participating in hands-on AI training</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="faculty">
+                    <img src="https://via.placeholder.com/400x300?text=Faculty+Photo" alt="Faculty">
+                    <div class="gallery-caption">
+                        <h3>Faculty Research Presentation</h3>
+                        <p>Dr. Johnson presenting latest research findings</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="students">
+                    <img src="https://via.placeholder.com/400x300?text=Students+Photo" alt="Students">
+                    <div class="gallery-caption">
+                        <h3>Coding Competition Winners</h3>
+                        <p>Our students excelling in the annual coding competition</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="faculty.html">Faculty</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="facilities.html">Facilities</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="materials.html">Study Materials</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Department of Computer Science. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

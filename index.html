@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Computer Science - AI & ML Excellence</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div id="notification-popup" class="notification-popup">
+        <div class="notification-content">
+            <div class="notification-header">
+                <h3>Department Notification</h3>
+                <button id="close-notification"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="notification-body">
+                <p id="notification-message">Welcome to the Computer Science Department!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add this right before the closing </body> tag -->
+    <script>
+        // Notification Popup System
+        document.addEventListener('DOMContentLoaded', function () {
+            // Sample notification data (in a real app, this would come from a server/database)
+            const notifications = [
+                {
+                    title: "Mid-Term Examinations",
+                    message: "Mid-term examinations for all AI and ML courses will be held from October 15-25, 2023. Please check the schedule on the Events page.",
+                    type: "exam",
+                    startDate: "2023-10-01",
+                    endDate: "2023-10-25"
+                },
+                {
+                    title: "AI Workshop",
+                    message: "Join us for a hands-on workshop on 'Building Neural Networks with TensorFlow' on November 5, 2023. Registration is open on the Events page.",
+                    type: "event",
+                    startDate: "2023-10-20",
+                    endDate: "2023-11-05"
+                }
+            ];
+
+            // Check if there are active notifications
+            const today = new Date();
+            const activeNotifications = notifications.filter(notification => {
+                const startDate = new Date(notification.startDate);
+                const endDate = new Date(notification.endDate);
+                return today >= startDate && today <= endDate;
+            });
+
+            if (activeNotifications.length > 0) {
+                // Display the first active notification
+                const notification = activeNotifications[0];
+                document.getElementById('notification-message').textContent = notification.message;
+
+                // Show the popup after a short delay
+                setTimeout(() => {
+                    document.getElementById('notification-popup').classList.add('show');
+                }, 1500);
+
+                // Close button functionality
+                document.getElementById('close-notification').addEventListener('click', function () {
+                    document.getElementById('notification-popup').classList.remove('show');
+                });
+            }
+        });
+    </script>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="imp_data/logo.png" alt="College Logo">
+                <div class="logo-text">
+                    <h1>Department of Computer Science</h1>
+                    <p>Excellence in AI, ML & Coding Education</p>
+                </div>
+            </div>
+
+            <button class="mobile-menu-btn">☰</button>
+
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="materials.html">Study Materials</a></li>
+                    <li><a href="faculty.html">Faculty</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="facilities.html">Facilities</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Innovating the Future with AI, ML & Coding</h1>
+            <p>The Department of Computer Science is dedicated to providing cutting-edge education and research
+                opportunities
+                in Artificial Intelligence, Machine Learning, and Software Development.</p>
+            <a href="#courses" class="btn">Explore Our Programs</a>
+        </div>
+    </section>
+
+    <!-- AI & ML Section -->
+    <section id="ai-ml" class="code-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Artificial Intelligence & Machine Learning</h2>
+                <p>Exploring the frontiers of intelligent systems and data-driven solutions</p>
+            </div>
+
+            <div class="code-container">
+                <div class="code-display">
+                    <div class="code-header">
+                        <div class="code-dot"></div>
+                        <div class="code-dot"></div>
+                        <div class="code-dot"></div>
+                    </div>
+                    <div class="code-content">
+                        <p><span class="purple">import</span> tensorflow <span class="purple">as</span> tf</p>
+                        <p><span class="purple">from</span> tensorflow.keras.models <span class="purple">import</span>
+                            Sequential</p>
+                        <p><span class="purple">from</span> tensorflow.keras.layers <span class="purple">import</span>
+                            Dense, Dropout</p>
+                        <p></p>
+                        <p><span class="comment"># Define a neural network model</span></p>
+                        <p><span class="purple">def</span> <span class="green">create_model</span>():</p>
+                        <p>&nbsp;&nbsp;model = Sequential([</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;Dense(<span class="orange">128</span>, activation=<span
+                                class="yellow">'relu'</span>, input_shape=(<span class="orange">784</span>,)),</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;Dropout(<span class="orange">0.2</span>),</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;Dense(<span class="orange">64</span>, activation=<span
+                                class="yellow">'relu'</span>),</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;Dropout(<span class="orange">0.2</span>),</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;Dense(<span class="orange">10</span>, activation=<span
+                                class="yellow">'softmax'</span>)</p>
+                        <p>&nbsp;&nbsp;])</p>
+                        <p>&nbsp;&nbsp;<span class="purple">return</span> model</p>
+                    </div>
+                </div>
+
+                <div class="code-info">
+                    <h3>Cutting-Edge AI Research</h3>
+                    <p>Our department is at the forefront of AI and ML research, focusing on neural networks, deep
+                        learning, computer vision, natural language processing, and reinforcement learning.</p>
+                    <p>Students work with state-of-the-art frameworks like TensorFlow, PyTorch, and scikit-learn to
+                        develop innovative solutions to real-world problems.</p>
+                    <a href="#courses" class="btn">Explore AI Courses</a>
+                </div>
+            </div>
+
+            <div class="ai-features">
+                <div class="ai-feature-card">
+                    <div class="ai-feature-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Neural Networks</h3>
+                    <p>Study the architecture and applications of neural networks in solving complex problems.</p>
+                </div>
+
+                <div class="ai-feature-card">
+                    <div class="ai-feature-icon"><i class="fas fa-eye"></i></div>
+                    <h3>Computer Vision</h3>
+                    <p>Learn how machines interpret and understand visual information from the world.</p>
+                </div>
+
+                <div class="ai-feature-card">
+                    <div class="ai-feature-icon"><i class="fas fa-comment-dots"></i></div>
+                    <h3>Natural Language Processing</h3>
+                    <p>Explore how computers analyze, understand, and generate human language.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coding Section -->
+    <section id="coding" class="code-section" style="background-color: #282a36;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Advanced Coding & Development</h2>
+                <p>Building the future through software engineering excellence</p>
+            </div>
+
+            <div class="code-container">
+                <div class="code-info">
+                    <h3>Software Development Expertise</h3>
+                    <p>Our curriculum emphasizes practical coding skills across multiple languages and paradigms.
+                        Students learn software architecture, design patterns, algorithms, and modern development
+                        methodologies.</p>
+                    <p>Through hands-on projects and industry collaborations, our students develop the technical and
+                        problem-solving skills needed in today's technology landscape.</p>
+                    <a href="#courses" class="btn">Explore Coding Courses</a>
+                </div>
+
+                <div class="code-display">
+                    <div class="code-header">
+                        <div class="code-dot"></div>
+                        <div class="code-dot"></div>
+                        <div class="code-dot"></div>
+                    </div>
+                    <div class="code-content">
+                        <p><span class="purple">class</span> <span class="green">DataStructure</span><span
+                                class="purple">
+                                <T>
+                            </span> {</p>
+                        <p>&nbsp;&nbsp;<span class="purple">private</span> T[] data;</p>
+                        <p>&nbsp;&nbsp;<span class="purple">private</span> <span class="orange">int</span> size = <span
+                                class="orange">0</span>;</p>
+                        <p></p>
+                        <p>&nbsp;&nbsp;<span class="comment">// Constructor</span></p>
+                        <p>&nbsp;&nbsp;<span class="purple">public</span> <span class="green">DataStructure</span>(<span
+                                class="orange">int</span> capacity) {</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;data = (T[]) <span class="purple">new</span> Object[capacity];</p>
+                        <p>&nbsp;&nbsp;}</p>
+                        <p></p>
+                        <p>&nbsp;&nbsp;<span class="comment">// Add element to the structure</span></p>
+                        <p>&nbsp;&nbsp;<span class="purple">public void</span> <span class="green">add</span>(T element)
+                            {</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="purple">if</span> (size == data.length) {</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resize();</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;data[size++] = element;</p>
+                        <p>&nbsp;&nbsp;}</p>
+                        <p>}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ai-features">
+                <div class="ai-feature-card">
+                    <div class="ai-feature-icon"><i class="fas fa-code"></i></div>
+                    <h3>Full-Stack Development</h3>
+                    <p>Master both frontend and backend technologies to build complete web applications.</p>
+                </div>
+
+                <div class="ai-feature-card">
+                    <div class="ai-feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Mobile App Development</h3>
+                    <p>Create innovative applications for iOS and Android platforms.</p>
+                </div>
+
+                <div class="ai-feature-card">
+                    <div class="ai-feature-icon"><i class="fas fa-project-diagram"></i></div>
+                    <h3>Software Architecture</h3>
+                    <p>Learn to design scalable, maintainable software systems using modern principles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About College Section -->
+    <section id="about-college" style="background-color: #f0f4f8;">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Moran College</h2>
+                <p>The institution that houses our department</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Institution</h3>
+                    <p>Established in 1964, Moran College has passed through a long course of development on all fronts.
+                        It has adapted and updated itself with the changing times.</p>
+                    <p>The entire campus is adequately equipped with all essential facilities like well-furnished
+                        classrooms with smart tools and apparatuses, a library housing more than 50,000 books,
+                        international journals, and a spacious reading hall.</p>
+                    <p>Our efficient and dedicated teachers impart quality education in a student-centric,
+                        student-friendly environment. They put in their best effort to create well-trained human
+                        resources who go out to the world with a sound intellect and cultured mind.</p>
+                    <p>Apart from curricular education, students can also enjoy their time while exploring and
+                        developing their talents in sports, music, and literature, as we have a well-equipped
+                        playground, an indoor stadium, a swimming pool, gyms for boys and girls, and an updated
+                        auditorium in which respective events are organized throughout the year.</p>
+                    <p><a href="https://morancollege.com/" target="_blank" class="btn">Visit College Website</a></p>
+                </div>
+
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f" alt="Moran College Campus">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty Section -->
+    <section id="faculty" style="background-color: #f0f4f8;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Faculty</h2>
+                <p>Meet our experienced and dedicated faculty members</p>
+            </div>
+
+            <div class="faculty-grid">
+                <div class="faculty-card">
+                    <div class="faculty-img">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Faculty Member">
+                    </div>
+                    <div class="faculty-info">
+                        <h3>TULSHI SIR</h3>
+                        <p class="designation">Department Head & Professor</p>
+                        <p>Ph.D. in Computer Science</p>
+                        <p>Specialization: Artificial Intelligence, Machine Learning</p>
+                    </div>
+                </div>
+
+                <div class="faculty-card">
+                    <div class="faculty-img">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Faculty Member">
+                    </div>
+                    <div class="faculty-info">
+                        <h3>Manash sir</h3>
+                        <p class="designation">Associate Professor</p>
+                        <p>Ph.D. in Information Systems</p>
+                        <p>Specialization: Database Systems, Data Mining</p>
+                    </div>
+                </div>
+
+                <div class="faculty-card">
+                    <div class="faculty-img">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Faculty Member">
+                    </div>
+                    <div class="faculty-info">
+                        <h3>bhaskar sir</h3>
+                        <p class="designation">Assistant Professor</p>
+                        <p>Ph.D. in Computer Engineering</p>
+                        <p>Specialization: Computer Networks, Cybersecurity</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Specialized Programs</h2>
+                <p>Explore our comprehensive range of AI, ML, and coding-focused courses</p>
+            </div>
+
+            <div class="courses-container">
+                <div class="course-card">
+                    <div class="course-img">
+                        <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b" alt="AI Program">
+                    </div>
+                    <div class="course-info">
+                        <h3>B.Sc. in Artificial Intelligence & Machine Learning</h3>
+                        <p>A four-year undergraduate program that provides a strong foundation in AI/ML principles,
+                            neural networks, data science, and practical applications of intelligent systems.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-img">
+                        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095"
+                            alt="Advanced Computing Program">
+                    </div>
+                    <div class="course-info">
+                        <h3>M.Sc. in Advanced Computing & AI</h3>
+                        <p>A two-year postgraduate program focusing on cutting-edge topics in AI research, deep
+                            learning, computer vision, NLP, and the development of intelligent applications.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-img">
+                        <img src="https://images.unsplash.com/photo-1610563166150-b34df4f3bcd6"
+                            alt="Software Engineering Program">
+                    </div>
+                    <div class="course-info">
+                        <h3>B.Tech in Software Engineering</h3>
+                        <p>A comprehensive program focused on modern software development practices, full-stack
+                            development, mobile applications, cloud computing, and DevOps methodologies.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" style="background-color: #f0f4f8;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Facilities</h2>
+                <p>Explore our state-of-the-art facilities and resources</p>
+            </div>
+
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <div class="facility-img">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789" alt="Computer Lab">
+                    </div>
+                    <div class="facility-info">
+                        <h3>Advanced Computer Labs</h3>
+                        <p>Our department houses multiple computer laboratories equipped with the latest hardware and
+                            software. These labs are available for students to practice programming, work on projects,
+                            and conduct research.</p>
+                    </div>
+                </div>
+
+                <div class="facility-card">
+                    <div class="facility-img">
+                        <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521" alt="Research Center">
+                    </div>
+                    <div class="facility-info">
+                        <h3>Research Center</h3>
+                        <p>Our research center provides a collaborative environment for faculty and students to work on
+                            cutting-edge research projects in various domains of computer science and information
+                            technology.</p>
+                    </div>
+                </div>
+
+                <div class="facility-card">
+                    <div class="facility-img">
+                        <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6" alt="Library">
+                    </div>
+                    <div class="facility-info">
+                        <h3>Digital Library</h3>
+                        <p>Our digital library provides access to a vast collection of e-books, journals, research
+                            papers, and online resources related to computer science and information technology.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events">
+        <div class="container">
+            <div class="section-title">
+                <h2>Upcoming Events</h2>
+                <p>Stay updated with our latest events, workshops, and seminars</p>
+            </div>
+
+            <div class="events-container">
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">15</span>
+                        <span class="month">May</span>
+                    </div>
+                    <div class="event-info">
+                        <h3>Tech Symposium 2023</h3>
+                        <p>An annual technical symposium featuring keynote speeches, paper presentations, and project
+                            exhibitions by students and faculty.</p>
+                        <p class="event-time"><i>⏰</i> 9:00 AM - 5:00 PM | Main Auditorium</p>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">22</span>
+                        <span class="month">May</span>
+                    </div>
+                    <div class="event-info">
+                        <h3>Workshop on Artificial Intelligence</h3>
+                        <p>A hands-on workshop on artificial intelligence and machine learning, covering basic concepts,
+                            algorithms, and practical applications.</p>
+                        <p class="event-time"><i>⏰</i> 10:00 AM - 4:00 PM | Computer Lab 2</p>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">30</span>
+                        <span class="month">May</span>
+                    </div>
+                    <div class="event-info">
+                        <h3>Industry-Academia Meet</h3>
+                        <p>A networking event bringing together industry professionals and academia to discuss the
+                            latest trends, challenges, and opportunities in the IT industry.</p>
+                        <p class="event-time"><i>⏰</i> 2:00 PM - 6:00 PM | Conference Hall</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="background-color: #f0f4f8;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with us for any inquiries or information</p>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i>📍</i>
+                            <p>Department of Computer Science<br>University Campus, Main Road<br>City, State - 123456
+                            </p>
+                        </div>
+                        <div class="contact-item">
+                            <i>📞</i>
+                            <p>+1 234 567 8900</p>
+                        </div>
+                        <div class="contact-item">
+                            <i>✉️</i>
+                            <p>cs.department@university.edu</p>
+                        </div>
+                        <div class="contact-item">
+                            <i>🕒</i>
+                            <p>Monday - Friday: 9:00 AM - 5:00 PM<br>Saturday: 9:00 AM - 1:00 PM<br>Sunday: Closed</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#">f</a>
+                        <a href="#">t</a>
+                        <a href="#">in</a>
+                        <a href="#">ig</a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+                <p>Learn more about our department's history, mission, and vision</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Journey</h3>
+                    <p>Established in 1995, the Department of Computer Science has been at the forefront of computing
+                        education and research. We have continuously evolved our curriculum to meet the changing demands
+                        of the industry and society.</p>
+                    <p>Our department is known for its innovative teaching methodologies, state-of-the-art facilities,
+                        and strong industry connections. We pride ourselves on producing graduates who are not just
+                        technically proficient but also possess critical thinking and problem-solving skills.</p>
+                    <h3>Our Mission</h3>
+                    <p>To provide high-quality education in computer science and information technology, conduct
+                        cutting-edge research, and contribute to the technological advancement of society.</p>
+                    <h3>Our Vision</h3>
+                    <p>To be recognized as a center of excellence in computer science education and research, producing
+                        graduates who lead technological innovation and contribute to the digital transformation of
+                        society.</p>
+                </div>
+
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1581092921461-39b9d08a9b21" alt="Computer Lab">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>About Us</h3>
+                <p>The Department of Computer Science is committed to excellence in AI, ML, and coding education,
+                    providing cutting-edge research opportunities and industry-relevant training.</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="materials.html">Study Materials</a></li>
+                    <li><a href="faculty.html">Faculty</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="facilities.html">Facilities</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Programs</h3>
+                <ul class="footer-links">
+                    <li><a href="#">B.Sc. in AI & Machine Learning</a></li>
+                    <li><a href="#">M.Sc. in Advanced Computing & AI</a></li>
+                    <li><a href="#">B.Tech in Software Engineering</a></li>
+                    <li><a href="#">Certificate in Data Science</a></li>
+                    <li><a href="#">Ph.D. in Computer Science</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter to stay updated with the latest in AI, ML, and coding.</p>
+                <form action="#" method="post">
+                    <input type="email" placeholder="Enter your email"
+                        style="width: 100%; padding: 0.8rem; border: none; border-radius: 5px; margin-bottom: 1rem;">
+                    <button type="submit" class="btn" style="width: 100%;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2025 Department of Computer Science. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
